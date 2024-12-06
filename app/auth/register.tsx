@@ -68,6 +68,7 @@ export default function RegistrationScreen({ navigation }: any) {
                 value={name}
                 onChangeText={setName}
                 autoCapitalize="words"
+                placeholderTextColor="#aaa"
             />
 
             <TextInput
@@ -77,6 +78,7 @@ export default function RegistrationScreen({ navigation }: any) {
                 onChangeText={setEmail}
                 keyboardType="email-address"
                 autoCapitalize="none"
+                placeholderTextColor="#aaa"
             />
 
             <TextInput
@@ -85,6 +87,7 @@ export default function RegistrationScreen({ navigation }: any) {
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
+                placeholderTextColor="#aaa"
             />
 
             <TextInput
@@ -93,10 +96,11 @@ export default function RegistrationScreen({ navigation }: any) {
                 value={confirmPassword}
                 onChangeText={setConfirmPassword}
                 secureTextEntry
+                placeholderTextColor="#aaa"
             />
 
             <View style={styles.pickerContainer}>
-                <Text>Select Role:</Text>
+                <Text style={styles.pickerLabel}>Select Role:</Text>
                 <Picker
                     selectedValue={role}
                     onValueChange={(itemValue) => setRole(itemValue)}
@@ -119,7 +123,7 @@ export default function RegistrationScreen({ navigation }: any) {
             </TouchableOpacity>
 
             <View style={styles.loginContainer}>
-                <Text>Already have an account? </Text>
+                <Text style={styles.loginText}>Already have an account? </Text>
                 <TouchableOpacity onPress={() => router.push('/auth/login')}>
                     <Text style={styles.loginText}>Login</Text>
                 </TouchableOpacity>
@@ -133,32 +137,40 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         justifyContent: 'center',
         padding: 20,
-        backgroundColor: '#f5f5f5'
+        backgroundColor: '#121212' // Dark background
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#fff' // Light text
     },
     input: {
         height: 50,
-        borderColor: '#ddd',
+        borderColor: '#333', // Dark border color
         borderWidth: 1,
         marginBottom: 15,
         paddingHorizontal: 15,
         borderRadius: 5,
-        backgroundColor: 'white'
+        backgroundColor: '#1f1f1f', // Dark input background
+        color: '#fff', // Light text inside input
     },
     pickerContainer: {
         marginBottom: 15,
     },
+    pickerLabel: {
+        color: '#fff', // Light label text
+        marginBottom: 5
+    },
     picker: {
         height: 50,
         width: '100%',
+        color: '#fff', // Light text in picker
+        backgroundColor: '#1f1f1f', // Dark background for picker
     },
     button: {
-        backgroundColor: '#007bff',
+        backgroundColor: '#007bff', // Blue button color
         padding: 15,
         borderRadius: 5,
         alignItems: 'center'
@@ -173,7 +185,7 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     loginText: {
-        color: '#007bff',
+        color: '#007bff', // Light blue text
         fontWeight: 'bold'
     }
 });

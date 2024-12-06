@@ -68,6 +68,7 @@ export default function LoginScreen({ navigation }: any) {
                 onChangeText={setEmail}
                 keyboardType="email-address"
                 autoCapitalize="none"
+                placeholderTextColor="#aaa"
             />
 
             <View style={styles.passwordContainer}>
@@ -77,6 +78,7 @@ export default function LoginScreen({ navigation }: any) {
                     value={password}
                     onChangeText={setPassword}
                     secureTextEntry={!showPassword} // Toggle visibility
+                    placeholderTextColor="#aaa"
                 />
                 <TouchableOpacity
                     onPress={() => setShowPassword(!showPassword)}
@@ -84,7 +86,7 @@ export default function LoginScreen({ navigation }: any) {
                     <Ionicons
                         name={showPassword ? 'eye' : 'eye-off'} // Icon for visibility toggle
                         size={24}
-                        color="gray"
+                        color="#aaa"
                     />
                 </TouchableOpacity>
             </View>
@@ -100,7 +102,7 @@ export default function LoginScreen({ navigation }: any) {
             </TouchableOpacity>
 
             <View style={styles.registerContainer}>
-                <Text>Don't have an account? </Text>
+                <Text style={styles.registerText}>Don't have an account? </Text>
                 <TouchableOpacity onPress={() => router.push("/auth/register")}>
                     <Text style={styles.registerText}>Register</Text>
                 </TouchableOpacity>
@@ -114,39 +116,42 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         padding: 20,
-        backgroundColor: '#f5f5f5'
+        backgroundColor: '#121212' // Dark background
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#fff' // Light text
     },
     input: {
         height: 50,
-        borderColor: '#ddd',
+        borderColor: '#333', // Dark border color
         borderWidth: 1,
         marginBottom: 15,
         paddingHorizontal: 15,
         borderRadius: 5,
-        backgroundColor: 'white'
+        backgroundColor: '#1f1f1f', // Dark input background
+        color: '#fff' // Light text inside input
     },
     passwordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderColor: '#ddd',
+        borderColor: '#333',
         borderWidth: 1,
         borderRadius: 5,
-        backgroundColor: 'white',
+        backgroundColor: '#1f1f1f',
         marginBottom: 15,
         paddingHorizontal: 10
     },
     passwordInput: {
         flex: 1,
-        height: 50
+        height: 50,
+        color: '#fff' // Light text inside password input
     },
     button: {
-        backgroundColor: '#007bff',
+        backgroundColor: '#007bff', // Blue button color
         padding: 15,
         borderRadius: 5,
         alignItems: 'center'
@@ -161,7 +166,7 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     registerText: {
-        color: '#007bff',
+        color: '#007bff', // Light blue text
         fontWeight: 'bold'
     }
 });

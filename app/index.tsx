@@ -34,7 +34,7 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#121212', // Dark background color
         justifyContent: 'center',
     },
     content: {
@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 'bold',
         marginBottom: 10,
-        color: '#333',
+        color: '#fff', // Light text color for dark theme
     },
     subtitle: {
         fontSize: 18,
-        color: '#666',
+        color: '#ccc', // Lighter color for subtitle text
         marginBottom: 40,
     },
     buttonContainer: {
@@ -57,15 +57,15 @@ const styles = StyleSheet.create({
         gap: 15,
     },
     button: {
-        backgroundColor: '#007bff',
+        backgroundColor: '#007bff', // Blue button color
         padding: 15,
         borderRadius: 8,
         alignItems: 'center',
     },
     registerButton: {
-        backgroundColor: 'white',
+        backgroundColor: '#1f1f1f', // Dark background for "Create Account" button
         borderWidth: 1,
-        borderColor: '#007bff',
+        borderColor: '#007bff', // Blue border color
     },
     buttonText: {
         color: 'white',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     registerButtonText: {
-        color: '#007bff',
+        color: '#007bff', // Blue text for the "Create Account" button
         fontSize: 16,
         fontWeight: 'bold',
     },
