@@ -22,6 +22,10 @@ export default function AdminDashboard() {
                     <Text style={styles.buttonText}>Manage Delivery Boxes</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.button} onPress={() => router.push('/dashboard/create-parcel')}>
+                    <Text style={styles.buttonText}>Create Parcel</Text>
+                </TouchableOpacity>
+
                 <TouchableOpacity style={styles.button} onPress={() => router.push('/dashboard/show-parcels')}>
                     <Text style={styles.buttonText}>Manage Parcels</Text>
                 </TouchableOpacity>
