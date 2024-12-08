@@ -16,6 +16,12 @@ export default function CustomerDashboard() {
             </TouchableOpacity>
 
             <TouchableOpacity
+                style={styles.button}
+                onPress={() => router.push('/dashboard/smartbox')}>
+                <Text style={styles.buttonText}>Collect Parcel</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
                 style={[styles.button, styles.logoutButton]}
                 onPress={() => router.push('/auth/login')}>
                 <Text style={styles.buttonText}>Logout</Text>
